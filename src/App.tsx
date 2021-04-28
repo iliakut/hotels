@@ -2,8 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import HotelService from './services/HotelService';
 
 function App() {
+  const hotels = HotelService.getHotels();
+
   return (
     <div className="App">
       <header className="App-header">
