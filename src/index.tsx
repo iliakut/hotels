@@ -6,6 +6,8 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import axe from '@axe-core/react';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 
 if (process.env.NODE_ENV !== 'production') {
   axe(React, ReactDOM, 1000);
@@ -13,7 +15,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <I18nextProvider i18n={i18n}>
+      <App />
+    </I18nextProvider>
   </Provider>,
   document.getElementById('root')
 );
