@@ -14,6 +14,8 @@ export interface HotelInterface {
   rooms: RoomInterface[]
 }
 
+export
+
 export interface RoomInterface {
   id: string
   name: string

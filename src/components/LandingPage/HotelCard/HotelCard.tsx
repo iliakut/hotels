@@ -10,20 +10,20 @@ const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
   // distance_to_venue: number
   // rating: ratingType
   // price_category: 'low' | 'medium' | 'high'
-  const desctiption = props.hotel.description.length > 150
+  const description = props.hotel.description.length > 150
     ? `${props.hotel.description.slice(0, 150)}...`
     : props.hotel.description;
 
   return (
     <section className={style.card}>
       <h2>{props.hotel.name}</h2>
-      <p className={style.description}>{desctiption}</p>
+      <p className={style.description}>{description}</p>
       <div className={style.info}>
         <p>{t('rating')} {props.hotel.rating}</p>
-        <p>{t('rating')} {props.hotel.distance_to_venue}</p>
-        <p>{t('rating')} {props.hotel.price_category}</p>
+        <p>{t('distanceToVenue')} {props.hotel.distance_to_venue}</p>
+        <p>{t('priceCategory')} {props.hotel.price_category}</p>
       </div>
-      <Link to={'/'}>{t('hotelLink')}</Link>
+      <Link to={`/hotel/${props.hotel.id}`}>{t('hotelLink')}</Link>
     </section>
   );
 };

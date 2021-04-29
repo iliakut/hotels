@@ -15,6 +15,16 @@ class HotelService extends HttpService {
       return null
     }
   }
+
+  async getHotelById(id: string) {
+    const data: HotelInterface | undefined = await this._get({ additionalUrl: `/${id}` });
+
+    if (data) {
+      return data;
+    } else {
+      return null
+    }
+  }
 }
 
 export default new HotelService();

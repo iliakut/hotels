@@ -2,6 +2,8 @@
   "translations": {
     "header": "TRN Venue Hotel",
     "hotelLink": "View",
-    "rating": "Rating"
+    "rating": "Rating",
+    "distanceToVenue": "Distance to venue",
+    "priceCategory": "Price"
   }
 }

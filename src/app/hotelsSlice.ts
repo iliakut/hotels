@@ -4,10 +4,12 @@ import { HotelInterface } from '../lib/types/types';
 
 export interface CounterState {
   hotels: HotelInterface[]
+  currentHotel: HotelInterface
 }
 
 const initialState: CounterState = {
-  hotels: []
+  hotels: [],
+  currentHotel: {}
 };
 
 export const hotelSlice = createSlice({

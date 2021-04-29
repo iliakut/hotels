@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import { useTranslation } from 'react-i18next';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
+import HotelDetailPage from './components/HotelDetailPage/HotelDetailPage';
 
 function App() {
   const { t } = useTranslation();
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <LandingPage/>
+        </Route>
+        <Route exact path="/hotel/:id">
+          <HotelDetailPage/>
         </Route>
       </Switch>
     </Router>
