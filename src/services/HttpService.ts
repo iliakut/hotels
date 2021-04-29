@@ -3,7 +3,6 @@ export default class HttpService {
   url: string
 
   constructor(url: string) {
-    console.log(process.env.REACT_APP_BACKEND_URL)
     this.baseUrl = process.env.REACT_APP_BACKEND_URL || "";
     this.url = url;
   }
