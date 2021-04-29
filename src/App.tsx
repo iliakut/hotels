@@ -1,7 +1,5 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.css';
-import HotelService from './services/HotelService';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';

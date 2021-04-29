@@ -7,7 +7,7 @@ class HotelService extends HttpService {
   }
 
   async getHotels() {
-    const data: HotelInterface | undefined = await this._get({});
+    const data: HotelInterface[] | undefined = await this._get({});
 
     if (data) {
       return data;

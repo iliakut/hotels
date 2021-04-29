@@ -1,13 +1,21 @@
 import React from 'react';
-import HotelService from '../../services/HotelService';
+import useGetHotels from '../../lib/customHooks/useGetHotels';
+import { useAppSelector } from '../../app/hooks';
+import { selectHotels } from '../../app/hotelsSlice';
+import HotelCard from './HotelCard/HotelCard';
+import style from './LandingPage.module.css';
 
 const LandingPage = () => {
-  const hotels = HotelService.getHotels();
+  useGetHotels();
+  const hotels = useAppSelector(selectHotels);
+  console.log(hotels)
 
   return (
-    <>
-      123
-    </>
+    <div className={style.container}>
+      {hotels.map(hotel => {
+        return (<HotelCard key={hotel.id} hotel={hotel}/>)
+      })}
+    </div>
   );
 };
 
