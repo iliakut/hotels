@@ -4,24 +4,28 @@ import { HotelInterface } from '../lib/types/types';
 
 export interface CounterState {
   hotels: HotelInterface[]
-  currentHotel: HotelInterface
+  currentHotel: HotelInterface | null
 }
 
 const initialState: CounterState = {
   hotels: [],
-  currentHotel: {}
+  currentHotel: null
 };
 
-export const hotelSlice = createSlice({
+export const hotelsSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
     setHotels: (state, action: PayloadAction<HotelInterface[]>) => {
       state.hotels = action.payload;
     },
+    setCurrentHotel: (state, action: PayloadAction<HotelInterface>) => {
+      state.currentHotel = action.payload;
+    },
   },
 });
 
-export const { setHotels } = hotelSlice.actions;
-export const selectHotels = (state: RootState) => state.hotelReducer.hotels;
-export default hotelSlice.reducer;
+export const { setHotels, setCurrentHotel } = hotelsSlice.actions;
+export const selectHotels = (state: RootState) => state.hotelsReducer.hotels;
+export const selectCurrentHotel = (state: RootState) => state.hotelsReducer.currentHotel;
+export default hotelsSlice.reducer;

@@ -11,10 +11,8 @@ export interface HotelInterface {
   price_category: 'low' | 'medium' | 'high'
   amenities: amenitiesType[]
   images: string[]
-  rooms: RoomInterface[]
+  rooms: string[]
 }
-
-export
 
 export interface RoomInterface {
   id: string
