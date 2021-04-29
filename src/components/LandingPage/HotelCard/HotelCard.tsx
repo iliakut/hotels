@@ -6,17 +6,25 @@ import { Link } from 'react-router-dom';
 
 const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
   const { t } = useTranslation();
-  const desctiption = props.hotel.description.length > 200
-    ? `${props.hotel.description.slice(0, 190)}...`
+
+  // distance_to_venue: number
+  // rating: ratingType
+  // price_category: 'low' | 'medium' | 'high'
+  const desctiption = props.hotel.description.length > 150
+    ? `${props.hotel.description.slice(0, 150)}...`
     : props.hotel.description;
 
   return (
-    <div className={style.card}>
+    <section className={style.card}>
       <h2>{props.hotel.name}</h2>
       <p className={style.description}>{desctiption}</p>
-      <p>{t('rating')} {props.hotel.rating}</p>
+      <div className={style.info}>
+        <p>{t('rating')} {props.hotel.rating}</p>
+        <p>{t('rating')} {props.hotel.distance_to_venue}</p>
+        <p>{t('rating')} {props.hotel.price_category}</p>
+      </div>
       <Link to={'/'}>{t('hotelLink')}</Link>
-    </div>
+    </section>
   );
 };
 

@@ -11,11 +11,11 @@ const LandingPage = () => {
   console.log(hotels)
 
   return (
-    <div className={style.container}>
+    <article className={style.container}>
       {hotels.map(hotel => {
         return (<HotelCard key={hotel.id} hotel={hotel}/>)
       })}
-    </div>
+    </article>
   );
 };
 
