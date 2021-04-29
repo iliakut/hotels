@@ -1,5 +1,7 @@
 {
   "translations": {
-    "header": "TRN Venue Hotel"
+    "header": "TRN Venue Hotel",
+    "hotelLink": "View",
+    "rating": "Rating"
   }
 }
