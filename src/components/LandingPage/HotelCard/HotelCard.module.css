@@ -1,12 +1,18 @@
 .card {
-    display: inline-block;
-    width: 25vw;
+    display: flex;
+    width: 600px;
     margin: 0 20px 20px 0;
-    padding: 10px;
+    box-shadow: 0 0 10px 0 lightgray;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .image {
     max-width: 100%;
+}
+
+.infoContainer {
+    margin: 0 10px 0 15px;
 }
 
 .description {
@@ -25,14 +31,14 @@
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1440px) {
     .card {
-        width: 32vw;
+        width: 400px;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .card {
-        width: 80vw;
-    }
-}
+/*@media screen and (max-width: 1200px) {*/
+/*    .card {*/
+/*        width: 100px;*/
+/*    }*/
+/*}*/

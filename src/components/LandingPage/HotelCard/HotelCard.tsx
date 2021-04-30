@@ -14,23 +14,25 @@ const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
 
   return (
     <section className={style.card}>
-      <h3>{props.hotel.name}</h3>
       <img
         loading="lazy"
         className={style.image}
         src={props.hotel.images[0]}
         alt={t('imgAlt')}/>
-      <p className={style.description}>{description}</p>
-      <div className={style.info}>
-        <StarsRating rating={props.hotel?.rating || 0}/>
-        <p>
-          {t('distanceToVenue')} {props.hotel.distance_to_venue} {t('distanceUnit')}
-        </p>
-        <p>{t('priceCategory')}
-          <PriceCategoryComponent category={props.hotel.price_category}/>
-        </p>
+      <div className={style.infoContainer}>
+        <h3>{props.hotel.name}</h3>
+        <p className={style.description}>{description}</p>
+        <div className={style.info}>
+          <StarsRating rating={props.hotel?.rating || 0}/>
+          <p>
+            {t('distanceToVenue')} {props.hotel.distance_to_venue} {t('distanceUnit')}
+          </p>
+          <p>{t('priceCategory')}
+            <PriceCategoryComponent category={props.hotel.price_category}/>
+          </p>
+        </div>
+        <Link to={`/hotel/${props.hotel.id}`}>{t('hotelLink')}</Link>
       </div>
-      <Link to={`/hotel/${props.hotel.id}`}>{t('hotelLink')}</Link>
     </section>
   );
 };
