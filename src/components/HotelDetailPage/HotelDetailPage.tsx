@@ -5,6 +5,8 @@ import { selectCurrentHotel } from '../../app/hotelsSlice';
 import { selectRooms } from '../../app/roomsSlice';
 import useGetHotel from '../../lib/customHooks/useGetHotel';
 import useGetRooms from '../../lib/customHooks/useGetRooms';
+import style from './HotelDetailPage.module.css';
+import StarsRating from '../UI/StarsRating/StarsRating';
 
 const HotelDetailPage = () => {
   const params = useParams<{ id: string }>();
@@ -22,13 +24,14 @@ const HotelDetailPage = () => {
   images: string[]
   rooms: string[]
   * */
+  // {hotel?.rating}
 
   return (
-    <article>
-      <h1>{hotel?.name}</h1>
+    <article className={style.container}>
+      <h1 className={style.header}>{hotel?.name}</h1>
+      <StarsRating rating={hotel?.rating || 0}/>
       <p>{hotel?.description}</p>
       <p>{hotel?.distance_to_venue}</p>
-      <p>{hotel?.rating}</p>
       <p>{hotel?.price_category}</p>
       <p>{hotel?.amenities}</p>
       <p>{hotel?.images}</p>

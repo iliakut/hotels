@@ -4,6 +4,7 @@
     "hotelLink": "View",
     "rating": "Rating",
     "distanceToVenue": "Distance to venue",
-    "priceCategory": "Price"
+    "priceCategory": "Price",
+    "imgAlt": "Hotel image"
   }
 }

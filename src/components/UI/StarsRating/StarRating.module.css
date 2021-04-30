@@ -1,0 +1,11 @@
+.rating {
+    display: inline-block;
+    min-width: 70px;
+}
+
+.starChecked:before,
+.starChecked:before {
+    color: gold;
+    content: "\2605";
+    position: absolute;
+}
