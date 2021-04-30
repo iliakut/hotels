@@ -3,7 +3,8 @@
     "header": "TRN Venue Hotel",
     "hotelLink": "View",
     "rating": "Rating",
-    "distanceToVenue": "Distance to venue",
+    "distanceToVenue": "To venue",
+    "distanceUnit": "km",
     "priceCategory": "Price",
     "imgAlt": "Hotel image"
   }

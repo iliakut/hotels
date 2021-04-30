@@ -10,7 +10,7 @@ const PriceCategoryComponent: FC<{ category: PriceCategory }> = (props) => {
   }
   return (
     <>
-      <span> {text}</span>
+      <span aria-label={props.category}>{text}</span>
     </>
   );
 };

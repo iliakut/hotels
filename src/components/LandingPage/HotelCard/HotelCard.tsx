@@ -8,8 +8,8 @@ import PriceCategoryComponent from '../../UI/PriceCategory/PriceCategoryComponen
 
 const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
   const { t } = useTranslation();
-  const description = props.hotel.description.length > 150
-    ? `${props.hotel.description.slice(0, 150)}...`
+  const description = props.hotel.description.length > 90
+    ? `${props.hotel.description.slice(0, 90)}...`
     : props.hotel.description;
 
   return (
@@ -24,7 +24,7 @@ const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
       <div className={style.info}>
         <StarsRating rating={props.hotel?.rating || 0}/>
         <p>
-          {t('distanceToVenue')} {props.hotel.distance_to_venue}
+          {t('distanceToVenue')} {props.hotel.distance_to_venue} {t('distanceUnit')}
         </p>
         <p>{t('priceCategory')}
           <PriceCategoryComponent category={props.hotel.price_category}/>
