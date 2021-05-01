@@ -7,6 +7,11 @@ body {
   background-color: #edf2f7;
 }
 
+button {
+  font-family: 'Open Sans', sans-serif, 'Roboto', 'Segoe UI', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

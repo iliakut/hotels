@@ -1,13 +1,26 @@
 .link {
     padding: 10px 24px;
-    background-color: #007fad;
+    margin: 0;
+    background-color: #045681;
     color: #f7fafc;
     text-decoration: initial;
-    font-weight: 700;
+    font-weight: bold;
+    font-size: medium;
+    line-height: normal;
     border-radius: 10px;
     display: inline-block;
+    border: none;
 }
 
 .link:hover {
-    background-color: rgba(0, 127, 173, 0.85);
+    background-color: rgba(4, 86, 129, 0.8);
+}
+
+.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.disabled:hover {
+    background-color: gray;
 }

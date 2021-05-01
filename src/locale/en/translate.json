@@ -12,6 +12,8 @@
     "rooms": "Rooms",
     "hotelImages": "Images",
     "maxOccupancy": "Max occupancy",
-    "roomPrice": "Price in USD"
+    "roomPrice": "$",
+    "roomAvailable": "Book now",
+    "roomUnavailable": "Reserved"
   }
 }
