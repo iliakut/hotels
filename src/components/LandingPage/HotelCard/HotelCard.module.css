@@ -10,6 +10,7 @@
 
 .image {
     max-width: 100%;
+    width: 200px;
 }
 
 .infoContainer {
@@ -101,6 +102,11 @@
         width: auto;
         height: auto;
     }
+
+    .image {
+        width: 100%;
+        min-height: 400px;
+    }
 }
 
 @media screen and (max-width: 360px) {
@@ -113,5 +119,9 @@
     .infoContainer {
         width: auto;
         height: auto;
+    }
+
+    .image {
+        min-height: 320px;
     }
 }
