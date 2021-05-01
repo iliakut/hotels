@@ -1,0 +1,13 @@
+.link {
+    padding: 10px 24px;
+    background-color: #007fad;
+    color: #f7fafc;
+    text-decoration: initial;
+    font-weight: 700;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.link:hover {
+    background-color: rgba(0, 127, 173, 0.85);
+}

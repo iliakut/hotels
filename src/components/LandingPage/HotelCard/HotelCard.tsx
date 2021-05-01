@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import StarsRating from '../../UI/StarsRating/StarsRating';
 import PriceCategoryComponent from '../../UI/PriceCategory/PriceCategoryComponent';
+import LinkStyled from '../../UI/LinkStyled/LinkStyled';
 
 const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
   const { t } = useTranslation();
@@ -34,7 +35,12 @@ const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
               <PriceCategoryComponent category={props.hotel.price_category}/>
             </p>
           </div>
-          <Link className={style.infoContainer__button} to={`/hotel/${props.hotel.id}`}>{t('hotelLink')}</Link>
+          <div className={style.infoContainer__button}>
+            <LinkStyled
+              to={`/hotel/${props.hotel.id}`}>
+              {t('hotelLink')}
+            </LinkStyled>
+          </div>
         </div>
       </div>
     </section>
