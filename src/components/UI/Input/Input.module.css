@@ -1,0 +1,13 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.inputContainer__label {
+    margin-bottom: 5px;
+}
+
+.inputContainer__input {
+    height: 25px;
+}

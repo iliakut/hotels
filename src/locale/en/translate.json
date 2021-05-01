@@ -14,6 +14,13 @@
     "maxOccupancy": "Max occupancy",
     "roomPrice": "$",
     "roomAvailable": "Book now",
-    "roomUnavailable": "Reserved"
+    "roomUnavailable": "Reserved",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "hotelName": "Hotel name",
+    "roomName": "Room name",
+    "finalPrice": "Total price",
+    "arrivalDate": "Arrival date",
+    "timeLocale": "en-US"
   }
 }
