@@ -18,19 +18,6 @@ const HotelDetailPage = () => {
   const { t } = useTranslation();
   const hotel = useAppSelector(selectCurrentHotel);
   const rooms = useAppSelector(selectRooms);
-
-  /*
-  name: string
-  description: string
-  distance_to_venue: number
-  rating: ratingType
-  price_category: 'low' | 'medium' | 'high'
-  amenities: amenitiesType[]
-  images: string[]
-  rooms: string[]
-  * */
-  // {hotel?.rating}
-
   const amenitiesString = hotel?.amenities.join(' ');
 
   return (
@@ -53,7 +40,7 @@ const HotelDetailPage = () => {
       <div className={style.container__rooms}>
         {
           rooms.map((room) => (
-            <RoomCard key={room.id} room={room}/>
+            <RoomCard key={room.id} hotelId={hotel?.id || ''} room={room}/>
           ))
         }
       </div>

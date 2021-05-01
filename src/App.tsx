@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
 import HotelDetailPage from './components/HotelDetailPage/HotelDetailPage';
+import BookPage from './components/BookPage/BookPage';
 
 function App() {
   const { t } = useTranslation();
@@ -19,6 +20,9 @@ function App() {
         </Route>
         <Route exact path="/hotel/:id">
           <HotelDetailPage/>
+        </Route>
+        <Route exact path="/hotel/:id/:roomId">
+          <BookPage/>
         </Route>
       </Switch>
     </Router>
