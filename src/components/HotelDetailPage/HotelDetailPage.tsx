@@ -7,13 +7,18 @@ import useGetHotel from '../../lib/customHooks/useGetHotel';
 import useGetRooms from '../../lib/customHooks/useGetRooms';
 import style from './HotelDetailPage.module.css';
 import StarsRating from '../UI/StarsRating/StarsRating';
+import ImagesComponent from './ImagesComponent/ImagesComponent';
+import { useTranslation } from 'react-i18next';
+import RoomCard from './RoomCard/RoomCard';
 
 const HotelDetailPage = () => {
   const params = useParams<{ id: string }>();
   useGetHotel(params.id);
   useGetRooms(params.id);
+  const { t } = useTranslation();
   const hotel = useAppSelector(selectCurrentHotel);
   const rooms = useAppSelector(selectRooms);
+
   /*
   name: string
   description: string
@@ -26,15 +31,35 @@ const HotelDetailPage = () => {
   * */
   // {hotel?.rating}
 
+  const amenitiesString = hotel?.amenities.join(' ');
+
   return (
     <article className={style.container}>
-      <h1 className={style.header}>{hotel?.name}</h1>
+      <h2 className={style.header}>{hotel?.name}</h2>
       <StarsRating rating={hotel?.rating || 0}/>
+      <hr/>
+      <h3>{t('description')}</h3>
       <p>{hotel?.description}</p>
-      <p>{hotel?.distance_to_venue}</p>
-      <p>{hotel?.price_category}</p>
-      <p>{hotel?.amenities}</p>
-      <p>{hotel?.images}</p>
+      <p><b>{t('distanceToVenue')}:</b> {hotel?.distance_to_venue} km</p>
+      <p><b>{t('priceCategory')}:</b> {hotel?.price_category}</p>
+      {
+        amenitiesString &&
+        <p>
+          <b>{t('amenities')}:</b> {amenitiesString}
+        </p>
+      }
+      <hr/>
+      <h3>{t('rooms')}</h3>
+      <div className={style.container__rooms}>
+        {
+          rooms.map((room) => (
+            <RoomCard key={room.id} room={room}/>
+          ))
+        }
+      </div>
+      <hr/>
+      <p><b>{t('hotelImages')}</b></p>
+      <ImagesComponent images={hotel?.images || []}/>
     </article>
   );
 };
