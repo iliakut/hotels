@@ -1,8 +1,9 @@
 .card {
+    background-color: white;
     display: flex;
     width: 590px;
     margin: 0 20px 20px 0;
-    box-shadow: 0 0 10px 0 lightgray;
+    box-shadow: 0 20px 25px -5px lightgrey, 0 10px 10px -5px lightgray;
     border-radius: 15px;
     overflow: hidden;
 }
@@ -12,19 +13,43 @@
 }
 
 .infoContainer {
-    margin: 0 10px 0 15px;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.infoContainer__headerAndDescription {
+    padding: 10px 10px 0 15px;
+    height: 100%;
+}
+
+.infoContainer__additionalAndBtn {
+    padding: 0 10px 10px 15px;
+    background-color: #f7fafc;
 }
 
 .infoContainer__description {
     height: 80px;
     overflow: hidden;
+    margin: 5px 0 5px 0;
+}
+
+.infoContainer__header {
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
 .infoContainer__additionalInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.infoContainer__additionalInfo p {
+    margin: 5px 0 5px 0;
 }
 
 .infoContainer__button {
@@ -65,14 +90,26 @@
 
 @media screen and (max-width: 480px) {
     .card {
-        width: 90vw;
+        width: 80vw;
         flex-direction: column;
         margin-right: 0;
     }
 
     .infoContainer {
-        margin: 0 10px 0 15px;
         width: auto;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .card {
+        width: 95vw;
+        flex-direction: column;
+        margin-right: 0;
     }
 
+    .infoContainer {
+        width: auto;
+        height: auto;
+    }
 }

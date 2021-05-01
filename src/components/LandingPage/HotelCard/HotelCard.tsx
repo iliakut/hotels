@@ -20,8 +20,10 @@ const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
         src={props.hotel.images[0]}
         alt={t('imgAlt')}/>
       <div className={style.infoContainer}>
-        <h3>{props.hotel.name}</h3>
-        <p className={style.infoContainer__description}>{description}</p>
+        <div className={style.infoContainer__headerAndDescription}>
+          <h2 className={style.infoContainer__header}>{props.hotel.name}</h2>
+          <p className={style.infoContainer__description}>{description}</p>
+        </div>
         <div className={style.infoContainer__additionalAndBtn}>
           <div className={style.infoContainer__additionalInfo}>
             <StarsRating rating={props.hotel?.rating || 0}/>
