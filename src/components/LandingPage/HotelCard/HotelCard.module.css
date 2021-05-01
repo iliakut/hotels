@@ -1,6 +1,6 @@
 .card {
     display: flex;
-    width: 600px;
+    width: 590px;
     margin: 0 20px 20px 0;
     box-shadow: 0 0 10px 0 lightgray;
     border-radius: 15px;
@@ -13,32 +13,66 @@
 
 .infoContainer {
     margin: 0 10px 0 15px;
+    width: 100%;
 }
 
-.description {
+.infoContainer__description {
     height: 80px;
     overflow: hidden;
 }
 
-.info {
+.infoContainer__additionalInfo {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.rating {
-    display: inline-block;
+.infoContainer__button {
+    display: block;
+    text-align: right;
 }
 
 
 @media screen and (max-width: 1440px) {
     .card {
-        width: 400px;
+        width: 70vw;
     }
 }
 
-/*@media screen and (max-width: 1200px) {*/
-/*    .card {*/
-/*        width: 100px;*/
-/*    }*/
-/*}*/
+@media screen and (max-width: 900px) {
+    .card {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 90vw;
+    }
+
+    .infoContainer__additionalInfo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .infoContainer__additionalAndBtn {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .card {
+        width: 90vw;
+        flex-direction: column;
+        margin-right: 0;
+    }
+
+    .infoContainer {
+        margin: 0 10px 0 15px;
+        width: auto;
+    }
+
+}

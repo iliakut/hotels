@@ -21,17 +21,19 @@ const HotelCard: FC<{ hotel: HotelInterface }> = (props) => {
         alt={t('imgAlt')}/>
       <div className={style.infoContainer}>
         <h3>{props.hotel.name}</h3>
-        <p className={style.description}>{description}</p>
-        <div className={style.info}>
-          <StarsRating rating={props.hotel?.rating || 0}/>
-          <p>
-            {t('distanceToVenue')} {props.hotel.distance_to_venue} {t('distanceUnit')}
-          </p>
-          <p>{t('priceCategory')}
-            <PriceCategoryComponent category={props.hotel.price_category}/>
-          </p>
+        <p className={style.infoContainer__description}>{description}</p>
+        <div className={style.infoContainer__additionalAndBtn}>
+          <div className={style.infoContainer__additionalInfo}>
+            <StarsRating rating={props.hotel?.rating || 0}/>
+            <p>
+              {t('distanceToVenue')} {props.hotel.distance_to_venue} {t('distanceUnit')}
+            </p>
+            <p>{t('priceCategory')}
+              <PriceCategoryComponent category={props.hotel.price_category}/>
+            </p>
+          </div>
+          <Link className={style.infoContainer__button} to={`/hotel/${props.hotel.id}`}>{t('hotelLink')}</Link>
         </div>
-        <Link to={`/hotel/${props.hotel.id}`}>{t('hotelLink')}</Link>
       </div>
     </section>
   );
