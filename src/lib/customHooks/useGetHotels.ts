@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import HotelService from '../../services/HotelService';
 import useFetch from './useFetch';
 import { useAppDispatch } from '../../app/hooks';
@@ -10,9 +10,11 @@ const useGetHotels = () => {
   }, []);
   const { response } = useFetch(fetch);
   const dispatch = useAppDispatch();
-  if (response) {
-    dispatch(setHotels(response))
-  }
+  useEffect(() => {
+    if (response) {
+      dispatch(setHotels(response))
+    }
+  }, [dispatch, response])
 };
 
 export default useGetHotels;
