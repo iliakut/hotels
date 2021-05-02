@@ -12,7 +12,7 @@ const Input: FC<InputProps> = (props) => {
   return (
     <div className={style.inputContainer}>
       <label className={style.inputContainer__label} htmlFor={props.inputId}>{props.label}</label>
-      <input value={props.value} type="text" disabled={props.disabled} className={style.inputContainer__input} id={props.inputId}/>
+      <input onChange={() => { console.log('input') }} value={props.value} type="text" disabled={props.disabled} className={style.inputContainer__input} id={props.inputId}/>
     </div>
   );
 };

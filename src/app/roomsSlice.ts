@@ -22,4 +22,5 @@ export const roomsSlice = createSlice({
 
 export const { setRooms } = roomsSlice.actions;
 export const selectRooms = (state: RootState) => state.roomsReducer.rooms;
+export const selectRoom = (roomId: string) => (state: RootState) => state.roomsReducer.rooms.find(room => room.id === roomId)
 export default roomsSlice.reducer;
