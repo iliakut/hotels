@@ -1,18 +1,22 @@
 import React from 'react';
 import './App.css';
-import { useTranslation } from 'react-i18next';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
 import HotelDetailPage from './components/HotelDetailPage/HotelDetailPage';
 import BookPage from './components/BookPage/BookPage';
+import UserInfo from './components/UserInfo/UserInfo';
+import UserPage from './components/UserPage/UserPage';
+import useGetHotels from './lib/customHooks/useGetHotels';
+import Header from './components/UI/Header/Header';
 
 function App() {
-  const { t } = useTranslation();
+  useGetHotels();
 
   return (
     <Router>
       <div className="App">
-        <h1>{t('header')}</h1>
+        <UserInfo/>
+        <Header/>
       </div>
       <Switch>
         <Route exact path="/">
@@ -23,6 +27,9 @@ function App() {
         </Route>
         <Route exact path="/hotel/:id/:roomId">
           <BookPage/>
+        </Route>
+        <Route exact path="/user">
+          <UserPage/>
         </Route>
       </Switch>
     </Router>

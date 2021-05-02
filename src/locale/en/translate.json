@@ -21,6 +21,12 @@
     "roomName": "Room name",
     "finalPrice": "Total price",
     "arrivalDate": "Arrival date",
-    "timeLocale": "en-US"
+    "confirm": "Confirm",
+    "backToHotel": "To hotel",
+    "timeLocale": "en-US",
+    "userAvatar": "User Info",
+    "administrativeInfo": "Some administrative info",
+    "totalNumberOfHotels": "Hotels number",
+    "totalNumberOfRooms": "Rooms number"
   }
 }

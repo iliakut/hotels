@@ -32,6 +32,11 @@ const BookPage = () => {
     history.push('/');
   }
 
+  const onClickToHotel = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    history.push(`/hotel/${params.id}`);
+  }
+
   return (
     <div className={style.container}>
       <h2>Confirmation</h2>
@@ -42,7 +47,10 @@ const BookPage = () => {
         <Input value={room?.name || ''} disabled={true} inputId="roomName" label={t('roomName')}/>
         <p>{t('finalPrice')}: {room?.price_in_usd} {t('roomPrice')}</p>
         <p>{t('arrivalDate')}: {`${date}.${month}.${year}`}</p>
-        <ButtonStyled onClick={onClickConfirm}>Confirm</ButtonStyled>
+        <div className={style.buttons}>
+          <ButtonStyled onClick={onClickConfirm}>{t('confirm')}</ButtonStyled>
+          <ButtonStyled className={style.backButton} onClick={onClickToHotel}>{t('backToHotel')}</ButtonStyled>
+        </div>
       </form>
     </div>
   );
